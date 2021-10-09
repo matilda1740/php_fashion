@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #c1e1d2;
+  font-family: "Noto Sans Display", sans-serif;
+  font-weight: 900;
+}
+a,
+.hr_button {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+a:hover,
+.hr_button:hover {
+  transform: scale(1.03);
+  color: #f8f8f8;
+  cursor: pointer;
+}
+.header_section,
+.categories_section {
+  height: 80px;
+  width: 100%;
+  padding: 10px 7.5px;
+  display: flex;
+  align-items: center;
+}
+.header_left_section img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.header_left_section {
+  width: 20%;
+}
+.header_right_section {
+  width: 25%;
+  margin-right: 50px;
+}
+.header_left_section,
+.header_right_section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header_mid_section {
+  width: 65%;
+  height: 100%;
+  align-items: center;
+}
+.header_mid_section,
+.header_right_section {
+  display: flex;
+  justify-content: flex-start;
+}
+.header_mid_section a,
+.hr_button {
+  height: 20px;
+  border-radius: 25px;
+  padding: 15px 10px;
+  margin: 0 20px;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to left, transparent 50%, #1a1a1a 50%) right;
+  background-size: 200%;
+  transition: all linear 0.5s ease-in-out;
+}
+.header_mid_section a {
+  width: 10%;
+}
+.hr_button {
+  border: 1px solid #1a1a1a;
+  width: 80%;
+}
+.hr_button a {
+  color: #1a1a1a;
+}
+.hr_button a i,
+.header_mid_section a i {
+  margin-right: 5px;
+}
+.hr_button p {
+  margin: 0 5px;
+}
+.header_mid_section a:hover,
+.hr_button:hover,
+.hr_button a:hover {
+  background-position: left;
+  color: #c1e1d2;
+}
+
+/* DROP DOWN MENU */
+
+.drop_menu_reveal {
+}
+.drop_menu_div {
+  width: 200px;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #f8f8f8;
+}
+/* END OF DROP DOWN MENU */
+
+/* MAIN PAGE SECTION */
+
+.main_page_section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* padding: 20px 100px 20px 100px; */
+}
+.banner_section {
+  /* background-color: darkred; */
+  width: 85%;
+  margin: 20px 7.5% 50px 7.5%;
+  height: 650px;
+  display: flex;
+  align-items: center;
+  /* background-image: url("../images/main_street.jpeg"); */
+  background-image: url("../images/main_min2.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner_left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #b2beb5;
+  padding: 0 50px;
+}
+.banner_left h3 {
+  font-family: "Dancing Script";
+
+  font-size: 100px;
+  margin-bottom: 10px;
+}
+.banner_left h3 span {
+  font-size: 50px;
+}
+.banner_left p {
+  font-size: 20px;
+  /* margin-bottom: 80px; */
+}
+.banner_right {
+  width: 50%;
+  height: 100%;
+  /* background-image: url("../images/main_min-removebg-preview.png");
+  background-size: contain;
+  background-repeat: no-repeat; */
+}
+
+.featured_products_section {
+  width: 100%;
+  height: 100%;
+  padding: 50px 7.5% 50px 7.5%;
+  /* background-color: brown; */
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #f4f4f4 50%, #c1e1d2 50%);
+}
+.home_products_row {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: 5px 0;
+}
+#blobSvg {
+  margin-top: -30%;
+  margin-left: 40%;
+  z-index: 0;
+}
+.reversed_row {
+  flex-direction: row-reverse;
+}
+.home_products_row img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.hpr_left {
+  width: 30%;
+  height: 100%;
+}
+.circular_div {
+  height: 400px;
+}
+.image_container {
+  width: 300px;
+  height: 90%;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 50px 0px 0px 50px;
+}
+.home_mens {
+  background-image: url("../images/mens_Jean-Sebastien-Roques.jpeg");
+}
+.home_womens {
+  background-image: url("../images/womens_Alice-Barbier.jpeg");
+}
+.home_child {
+  background-image: url("../images/baby_fashion.jpeg");
+}
+.home_pets {
+  background-image: url("../images/dog_image.jpeg");
+}
+.hpr_right {
+  width: 70%;
+  height: 100%;
+  padding: 0 10%;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+.hpr_right h3 {
+  font-family: "Dancing Script";
+  font-size: 80px;
+}
+.hpr_right p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 10px 0 0px 0;
+}
+.hpr_right a {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: 1px solid #1a1a1a;
+  border-radius: 25px;
+  width: 35%;
+  align-content: flex-start;
+  color: #1a1a1a;
+}
+.hpr_right a:hover {
+  color: #c1e1d2;
+  background-color: #1a1a1a;
+}
+.features_section {
+  width: 85%;
+  height: 300px;
+  margin: 50px 7.5% 50px 7.5%;
+  padding: 100px 0%;
+  display: flex;
+  /* background-color: #f4f4f4; */
+  /* background-color: darkred; */
+}
+.feature_row {
+  width: 33.3333%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+}
+.feature_row * {
+  padding: 10px 0;
+}
+.feature_row i {
+  font-size: 60px;
+  font-weight: 700;
+}
+.feature_row p {
+  padding: 10px 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+/* END OF MAIN PAGE SECTION */
+
+/* FORMS */
+/************ LOGIN PAGE *************/
+.login_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 12.5% 0 0 35%;
+  width: 600px;
+  height: 500px;
+  background-color: #dcdcdc;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+.login_section h2 {
+  margin-top: 20px;
+}
+.reg_section {
+  height: 700px !important;
+  margin: 7.5% 0 0 40%;
+}
+.registeration_parent {
+  height: 700px;
+  margin-top: 5%;
+}
+.registeration_section {
+  height: 100%;
+}
+.login_logo {
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+}
+.login_logo img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.login_error {
+  padding: 10px;
+  border: 1px solid rgb(210, 4, 45, 0.8);
+  background-color: rgb(210, 4, 45, 0.1);
+  width: 80%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.login_form,
+.registration_form {
+  width: 80%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  padding-top: 20px;
+}
+
+.login_form .form_inputs,
+.registration_form .form_inputs,
+.form_btn {
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+}
+.form_btn {
+  margin-top: 20px;
+  transition: 0.3s;
+  background-color: #c1e1d2;
+  color: #1a1a1a;
+  font-size: medium;
+}
+.form_btn:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+.login_footer {
+  display: flex;
+  margin-top: 20px;
+  width: 80%;
+  height: 50px;
+  padding: 10px 0;
+  color: black;
+}
+.login_footer p {
+  width: 50%;
+}
+.login_footer a {
+  color: #1a1a1a;
+}
+.back_home {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.back_home * {
+  padding: 0 10px;
+}
+
+/* CATEGORIES SECTION */
+.categories_section {
+  height: 50px;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #c1e1d2;
+}
+.categories_div {
+  width: 65%;
+  height: 100%;
+  margin: 0 17.5%;
+  display: flex;
+  justify-content: space-between;
+}
+.categories_options {
+  display: flex;
+  height: 100%;
+  padding: 10px 5px;
+  transition: all 0.3s ease-in-out;
+}
+.categories_options i {
+  margin-right: 5px;
+}
+.categories_options:hover {
+  background-color: #c1e1d2;
+  color: #1a1a1a;
+}
