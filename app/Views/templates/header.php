@@ -26,18 +26,29 @@
         </div>
 
         <div class="header_right_section">
-        
-            <!-- <div class="hr_button">
-                <a href="/profile.html">
-                    <i class="fas fa-user-circle"></i>Welcome, Justin Davis</a>
-                <p> / </p>
-                <a href="/logout.php"><i class="fas fa-door-open"></i>Logout</a>
-            </div> -->
+<?php
+if (isset($_SESSION['key_generate']) && $_SESSION['key_generate']) {
+?>
+        <div class="hr_button">
+            <a href="<?= site_url('Users/profile') ?>">
+                <i class="fas fa-user-circle"></i>Welcome, <?php echo $_SESSION['greetname'] ?></a>
+            <p> / </p>
+            <a href="<?= site_url('Users/logout') ?>"><i class="fas fa-door-open"></i>Logout</a>
+        </div>
+ <?php
+}else {
+?>
+
             <div class="hr_button">
-                <a href="/register.html"><i class="fas fa-sign-in-alt"></i>Sign Up</a>
+                <a href="<?=site_url('/users/register')?>"><i class="fas fa-sign-in-alt"></i>Sign Up</a>
                 <p> / </p>
-                <a href="/login.html">Sign In</a>
+                <a href="<?=site_url('/users/login')?>">Sign In</a>
             </div>
+ <?php     
+} 
+?>
+
+
         </div>
     </section>
 </body>

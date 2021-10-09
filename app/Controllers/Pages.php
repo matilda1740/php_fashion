@@ -19,7 +19,6 @@ class Pages extends BaseController
         // echo view('templates/header', $data);
         echo view('templates/header');
         echo view('templates/main');
-
         echo view('pages/' . $page);
     }
 

@@ -31,23 +31,23 @@ class Database extends Config
      * @var array
      */
     public $default = [
-        'DSN'      => '',
+        'DSN' => '',
         'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
+        'username' => 'root_sample',
+        'password' => 'root_sample1234',
+        'database' => 'ecommerce',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
-        'DBDebug'  => (ENVIRONMENT !== 'production'),
-        'charset'  => 'utf8',
+        'DBDebug' => (ENVIRONMENT !== 'development'),
+        'charset' => 'utf8',
         'DBCollat' => 'utf8_general_ci',
-        'swapPre'  => '',
-        'encrypt'  => false,
+        'swapPre' => '',
+        'encrypt' => false,
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port' => 3306,
     ];
 
     /**
@@ -57,23 +57,23 @@ class Database extends Config
      * @var array
      */
     public $tests = [
-        'DSN'      => '',
+        'DSN' => '',
         'hostname' => '127.0.0.1',
-        'username' => '',
-        'password' => '',
+        'username' => 'root_sample',
+        'password' => 'root_sample1234',
         'database' => ':memory:',
         'DBDriver' => 'SQLite3',
-        'DBPrefix' => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
+        'DBPrefix' => 'db_', // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
         'pConnect' => false,
-        'DBDebug'  => (ENVIRONMENT !== 'production'),
-        'charset'  => 'utf8',
+        'DBDebug' => (ENVIRONMENT !== 'production'),
+        'charset' => 'utf8',
         'DBCollat' => 'utf8_general_ci',
-        'swapPre'  => '',
-        'encrypt'  => false,
+        'swapPre' => '',
+        'encrypt' => false,
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port' => 3306,
     ];
 
     public function __construct()

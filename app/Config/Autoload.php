@@ -4,6 +4,9 @@ namespace Config;
 
 use CodeIgniter\Config\AutoloadConfig;
 
+$autoload['libraries'] = array('session', 'database');
+
+$autoload['helper'] = array('url', 'form');
 /**
  * -------------------------------------------------------------------
  * AUTOLOADER CONFIGURATION
@@ -17,6 +20,7 @@ use CodeIgniter\Config\AutoloadConfig;
  */
 class Autoload extends AutoloadConfig
 {
+
     /**
      * -------------------------------------------------------------------
      * Namespaces
@@ -42,7 +46,7 @@ class Autoload extends AutoloadConfig
      */
     public $psr4 = [
         APP_NAMESPACE => APPPATH, // For custom app namespace
-        'Config'      => APPPATH . 'Config',
+        'Config' => APPPATH . 'Config',
     ];
 
     /**
