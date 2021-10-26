@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" media="screen" href = "<?php echo base_url('/assets/css/style.css'); ?>"/> 
     <script src="https://kit.fontawesome.com/48e39edd0b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="<?php echo base_url('/assets/js/jquery.js'); ?>" type="text/javascript"></script>
     <title>VV | Login Page</title>
 </head>
 <body>
+    <?php $validation = \Config\Services::validation(); ?>
     <section class="login_section">
         <h2>Customer Log In</h2>
-        <form class="login_form" method="post" action="<?= site_url('Users/handleLogin') ?>">
-    
+        <form class="login_form" id="auth_form" method="post" action="<?php site_url('/users/login_user') ?>">
+
+            <!-- All Fields Empty Error -->
+            <div id="main_form_error" class="form_error form_inputs no_display_error">
+                <p>Ensure that all the fields are filled</p>
+            </div>      
+
             <label class="form_labels" for="loginEmail">Email:</label>
             <input type="email" id="form_input" class="form_inputs" name="loginEmail" />
             <label class="form_labels" for="loginPass">Password:</label>

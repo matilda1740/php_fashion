@@ -33,12 +33,17 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Pages::view');
-$routes->get('/users/register', 'Users::showRegister');
-$routes->get('/users/login', 'Users::showLogin');
-$routes->get('/users/currentUser', 'Users::currentUser');
+$routes->get('/users/register', 'Pages::showRegister');
+$routes->post('/users/register_user', 'Users::handleRegister');
+$routes->get('/users/success', 'Pages::success');
+$routes->get('/users/login', 'Pages::showLogin');
+$routes->post('/users/login_user', 'Users::handleLogin');
+
+$routes->get('/users/loggedInUser', 'Users::loggedInUser');
 $routes->get('/users/profile', 'Users::profile');
 $routes->get('/users/logout', 'Users::logout');
 $routes->get('/users/show', 'Users::showUsers');
+
 
 
 /*

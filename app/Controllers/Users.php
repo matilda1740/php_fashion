@@ -10,38 +10,89 @@ class Users extends BaseController
     {
         return view('welcome_message');
     }
-    public function showRegister()
-    {
-        echo view('templates/header');
-        return view('users/register');
-    }
+
 
     public function handleRegister()
     {
-        $userModel = new UserModel();
+        // SERVER SIDE FORM VALIDATION
+        // $validate = $this->validate([
+        //     'registerFname' => [
+        //         'label' => 'First Name',
+        //         'rules' => 'required',
+        //         'errors' => [
+        //             'required' => 'Please Enter Your First Name',
+        //         ]
+        //     ],
+        //     'registerLname' => [
+        //         'label' => 'Last Name',
+        //         'rules' => 'required',
+        //         'errors' => [
+        //             'required' => 'Please Enter Your Last Name',
+        //         ]
+        //     ],
+        //     'registerGender' => 'required',
+        //     'registerEmail' => [
+        //         'label' => 'Email',
+        //         'rules' => 'required|valid_email',
+        //         'errors' => [
+        //             'required' => 'Please Enter a Valid Email Address',
+        //             'valid_email' => 'Please enter a valid email address.'
+        //         ]
+        //     ],
+        //     'registerPass' => [
+        //         'label' => 'Password',
+        //         'rules' => 'required|min_length[5]|alpha_numeric',
+        //         'errors' => [
+        //             'required' => 'Please Enter a Valid Password',
+        //             'min_length' => 'Password must be atleast 5 digits.',
+        //             'alpha_numeric' => 'Password must contain alpha numeric'
+        //         ]
+        //     ],
+        //     'registerConfirmPass' => [
+        //         'label' => 'Confirm Password',
+        //         'rules' => 'required|matches[registerPass]',
+        //         'errors' => [
+        //             'required' => 'Please Confirm Your Password',
+        //             'matches' => 'Confirm password and password must be same.'
+        //         ],
+        //     ]
+        // ]);
 
+        // if ($this->validation->run() == FALSE) {
+        //     if (!$validate) {
+        //         echo view('templates/header');
+        //         return view('users/register', [
+        //             'validation' => $this->validator
+        //         ]);
+        //     }
+        // }
+        // else {
+        $userModel = new UserModel();
         $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         $userID = substr(str_shuffle($str_result),
             0, 15);
+        $userRole = 'uFmkUINTY0tNU2W';
+        $userActive = 0;
+
+        // HASH PASSWORD
+        $hashedPass = password_hash($this->request->getVar('registerPass'), PASSWORD_DEFAULT);
         $data = array(
             'userID' => $userID,
             'fname' => $this->request->getVar('registerFname'),
             'lname' => $this->request->getVar('registerLname'),
             'gender' => $this->request->getVar('registerGender'),
             'email' => $this->request->getVar('registerEmail'),
-            'pass' => $this->request->getVar('registerPass')
+            'pass' => $hashedPass,
+            'roleID' => $userRole,
+            'isDeleted' => $userActive
         );
-
         $userModel->insert($data);
 
-        return $this->response->redirect(site_url('/users/showUsers'));
+        return $this->response->redirect(site_url('/users/success'));
+    // }
     }
 
-    public function showLogin()
-    {
-        echo view('templates/header');
-        return view('users/login');
-    }
+    // HANDLE LOGIN FUNCTIONS
     public function handleLogin()
     {
         $session = session();
@@ -49,6 +100,7 @@ class Users extends BaseController
         $email = $this->request->getVar('loginEmail');
         $pass = $this->request->getVar('loginPass');
 
+        // $checkHashed = 
         $userModel = new UserModel();
 
         $result = $userModel->verifyLogin($email, $pass);
@@ -70,23 +122,39 @@ class Users extends BaseController
                 $session->set('greetname', $row->fname);
 
             }
-            return redirect('users/currentUser');
+            return $this->response->redirect(site_url('/'));
         }
         else {
-        // MEANING NOT AUTHENTICATED
+            // MEANING NOT AUTHENTICATED
+            echo view('templates/header');
+            return view('users/login');
         }
         ;
     }
-    public function currentUser()
-    {
-        if (!isset($_SESSION['key_generate']) || $_SESSION['key_generate'] == false) {
 
-            return redirect('users/login');
-        }
-        else {
-            return redirect('/');
-        }
+    // public function loggedInUser()
+    // {
+    //     if (!isset($_SESSION['key_generate']) || $_SESSION['key_generate'] == false) {
+
+    //         return redirect('users/login');
+    //     }
+    //     else {
+    //         return redirect('/');
+    //     }
+    // }
+    // HANDLE LOGOUT FUNCTIONS
+    public function logout()
+    {
+        $session = session();
+        $session->remove('key_generate');
+        $session->remove('userInfo');
+        $session->destroy();
+        return redirect('users/login');
+
     }
+
+
+
     public function profile()
     {
 
@@ -103,18 +171,9 @@ class Users extends BaseController
             print_r($value);
         }
     }
-    public function login()
-    {
 
-    }
-    public function logout()
-    {
-        $session = session();
-        $session->remove('key_generate');
-        $session->remove('userInfo');
-        $session->destroy();
-        return redirect('users/login');
-    }
+
+
 }
 
 ?>

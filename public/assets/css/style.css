@@ -299,12 +299,13 @@ a:hover,
   margin-top: 20px;
 }
 .reg_section {
-  height: 700px !important;
+  height: 800px !important;
   margin: 7.5% 0 0 40%;
 }
 .registeration_parent {
-  height: 700px;
-  margin-top: 5%;
+  height: 800px;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 .registeration_section {
   height: 100%;
@@ -410,4 +411,22 @@ a:hover,
 .categories_options:hover {
   background-color: #c1e1d2;
   color: #1a1a1a;
+}
+
+/*  */
+.form_error {
+  border: 1px solid rgb(210, 4, 45, 0.8);
+  background-color: rgb(210, 4, 45, 0.1);
+  width: 100%;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+.no_display_error {
+  display: none;
+}
+
+.error_border {
+  border: 1px solid rgb(210, 4, 45, 1) !important;
+  /* background-color: rgb(210, 4, 45, 0.1); */
 }

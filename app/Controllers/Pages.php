@@ -21,5 +21,20 @@ class Pages extends BaseController
         echo view('templates/main');
         echo view('pages/' . $page);
     }
+    public function success()
+    {
+        return view('templates/formsuccess');
+    }
+    public function showRegister()
+    {
+        echo view('templates/header');
+        return view('users/register');
+    }
+    // DISPLAY LOGIN PAGE
+    public function showLogin()
+    {
+        echo view('templates/header');
+        return view('users/login');
+    }
 
 }
