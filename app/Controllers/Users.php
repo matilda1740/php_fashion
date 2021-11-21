@@ -59,6 +59,10 @@ class Users extends BaseController
         // ]);
 
         // if ($this->validation->run() == FALSE) {
+        //     $validator['success'] = false;
+        //     $validator['messages'] = 'Registeration Error';
+
+
         //     if (!$validate) {
         //         echo view('templates/header');
         //         return view('users/register', [
@@ -67,6 +71,7 @@ class Users extends BaseController
         //     }
         // }
         // else {
+
         $userModel = new UserModel();
         $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         $userID = substr(str_shuffle($str_result),
@@ -87,8 +92,19 @@ class Users extends BaseController
             'isDeleted' => $userActive
         );
         $userModel->insert($data);
+        // $validator['success'] = true;
+        // $validator['messages'] = 'Successfully Registered';
+        if ($this->response->getStatusCode() == 200){
+            $session = session();
+            $session->setFlashdata('status', 'success');
+            $session->setFlashdata('message', 'Successfully Registered');
 
-        return $this->response->redirect(site_url('/users/success'));
+
+        }else if($this->response->getStatusCode() == 404){
+
+        }
+        // BEFORE THIS DISPLAY SUCCESS MESSAGE
+        // return $this->response->redirect(site_url('/users/login')); 
     // }
     }
 
@@ -105,7 +121,7 @@ class Users extends BaseController
 
         $result = $userModel->verifyLogin($email, $pass);
 
-        if (!empty($result) && count($result) > 0) {
+        // if (!empty($result) && count($result) > 0) {
             print_r($result);
             foreach ($result as $row) {
                 $authArray = array(
@@ -123,13 +139,13 @@ class Users extends BaseController
 
             }
             return $this->response->redirect(site_url('/'));
-        }
-        else {
-            // MEANING NOT AUTHENTICATED
-            echo view('templates/header');
-            return view('users/login');
-        }
-        ;
+        // }
+        // else {
+        //     // MEANING NOT AUTHENTICATED
+        //     echo view('templates/header');
+        //     return view('users/login');
+        // }
+        // ;
     }
 
     // public function loggedInUser()

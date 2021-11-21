@@ -14,7 +14,21 @@
 <body>
     <?php $validation = \Config\Services::validation(); ?>
     <section class="login_section registeration_parent">
+<?php
+if (isset($_SESSION['key_generate']) && $_SESSION['key_generate']) {
+?>        
+            <div class="user_alerts success no_alerts">
+                <!-- ALERT MESSAGE -->
+                <i class="far fa-check-circle"></i>
+
+                <p><?= $this->session->flashdata('message');?></p>
+            </div>  
+ <?php
+}
+?>                  
         <h2>Customer Sign Up</h2>
+
+
         <form class="registration_form" id="auth_form" method="post" action="<?php echo base_url('/users/register_user') ?>">
 
             <!-- All Fields Empty Error -->
@@ -23,24 +37,24 @@
             </div>                              
 
             <label class="form_labels" for="registerFname">First Name:</label>
-            <input type="text" class="form_inputs" name="registerFname" />
+            <input type="text" class="form_inputs" name="registerFname" id="registerFname"/>
 
             <label class="form_labels" for="registerLname">Last Name:</label>
-            <input type="text" class="form_inputs" name="registerLname" />
+            <input type="text" class="form_inputs" name="registerLname" id="registerLname"/>
 
             <label class="form_labels" for="registerGender">Gender:</label>
-            <select class="form_inputs" name="registerGender">
+            <select class="form_inputs"  name="registerGender" id="registerGender">
                 <option value="female" defaultValue>Female</option>
                 <option value="male">Male</option>
             </select>
             <label class="form_labels" for="registerEmail">Email:</label>
-            <input type="email" class="form_inputs" name="registerEmail" />
+            <input type="email" class="form_inputs" name="registerEmail" id="registerEmail"/>
           
             <label class="form_labels" for="registerPass">Password:</label>
-            <input type="password" class="form_inputs" name="registerPass" />
+            <input type="password" class="form_inputs" name="registerPass" id="registerPass"/>
             
             <label class="form_labels" for="registerConfirmPass">Confirm Password:</label>
-            <input type="password" class="form_inputs" name="registerConfirmPass" password="" autoComplete="new-password" />
+            <input type="password" class="form_inputs" name="registerConfirmPass" id="registerConfirmPass" password="" autoComplete="new-password" />
             <button type="submit" class="form_btn" id="register_btn">Sign Up</button>
         </form>
         <div class="login_footer">

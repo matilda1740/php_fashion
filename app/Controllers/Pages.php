@@ -36,5 +36,29 @@ class Pages extends BaseController
         echo view('templates/header');
         return view('users/login');
     }
-
+    // public function showProducts()
+    // {
+    //     echo view('templates/header');
+    //     return view('pages/products');
+    // }
+    public function showWishlist()
+    {
+        echo view('templates/header');
+        return view('pages/wishlist');
+    }
+    public function showCart()
+    {
+        echo view('templates/header');
+        return view('pages/cart');
+    }
+    public function showCheckout()
+    {
+        echo view('templates/header');
+        return view('pages/checkout');
+    }
+    public function showProfile()
+    {
+        echo view('templates/header');
+        return view('pages/profile');
+    }
 }

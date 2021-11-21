@@ -11,6 +11,8 @@
 </head>
 <body>
     <!-- HEADER -->
+    <?php $session = \Config\Services::session(); ?>
+
     <section class="header_section">
         <div class="header_left_section">
             <!-- LOGO -->
@@ -19,10 +21,10 @@
 
         <div class="header_mid_section">
             <a href="/index.php"><i class="fas fa-home"></i>Home</a>
-            <a href="/allProducts.html" class=
+            <a href="<?php echo base_url('/products') ?>" class=
             "drop_menu_reveal"><i class="fas fa-shopping-bag"></i>Shop</a>
-            <a href="/wishlist.html"><i class="far fa-heart"></i>Wishlist</a>
-            <a href="/cart.html"><i class="fas fa-shopping-cart"></i>Cart</a>
+            <a href="<?php echo base_url('/wishlist') ?>"><i class="far fa-heart"></i>Wishlist</a>
+            <a href="<?php echo base_url('/cart') ?>"><i class="fas fa-shopping-cart"></i>Cart</a>
         </div>
 
         <div class="header_right_section">

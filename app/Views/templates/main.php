@@ -15,7 +15,7 @@
     <section class="main_page_section">
 
         <!-- LANDING PAGE START -->
-        <section class="banner_section">
+        <section class="main_banner_section">
             <div class="banner_left">
                 <h3>Paris Fashion Week <span>2078</span></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut officiis culpa voluptatum vitae nobis, placeat quia rem sequi libero tenetur.</p>
