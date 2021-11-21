@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VV | Register Page</title>
-    <link rel = "stylesheet" media="screen" href = "<?php echo base_url('/assets/css/style.css'); ?>"/> 
+    <link rel = "stylesheet" media="screen" href = "<?php echo base_url('assets/css/style.css'); ?>"/> 
     <script src="https://kit.fontawesome.com/48e39edd0b.js" crossorigin="anonymous"></script>
     <!-- CLIENT SIDE FORM VALIDATION -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

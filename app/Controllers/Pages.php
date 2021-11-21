@@ -18,7 +18,7 @@ class Pages extends BaseController
         // $this->load->helper('url');
         // echo view('templates/header', $data);
         echo view('templates/header');
-        echo view('templates/main');
+        echo view('pages/main');
         echo view('pages/' . $page);
     }
     public function success()
